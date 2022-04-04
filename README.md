@@ -1,1 +1,1 @@
-# MyGardenBackEnd
+In order to get the lines to dissapear from my imports, I made VScode run this through the virtual environment. I did this by hitting command shift p, select interpretor, and then selected it in the options that came up. I think it was an option because I was already running it (pipenv shell) in my terminal. 
