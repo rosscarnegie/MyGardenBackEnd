@@ -5,7 +5,7 @@ class GardenerSerializer(serializers.ModelSerializer):
     class Meta:
         # https://docs.djangoproject.com/en/4.0/topics/auth/customizing/#django.contrib.auth.get_user_model
         model = get_user_model()
-        fields = ('id', 'user_name', 'email', 'zipcode')
+        fields = ('id', 'email', 'password')
         extra_kwargs = { 
             'password': { 
                 'write_only': True, 'min_length': 5 

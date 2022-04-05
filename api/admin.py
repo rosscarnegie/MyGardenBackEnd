@@ -8,13 +8,13 @@ from .models.plants import Plant
 
 
 class UserAdminConfig(UserAdmin):
-    search_fields =('email', 'user_name',)
+    search_fields =('email', 'username',)
     list_filter = ('is_active', 'is_staff', 'is_superuser',)
     ordering =('id',)
-    list_display=('id', 'user_name', 'email', 'zipcode', 'zone', 'is_active', 'is_staff', 'is_superuser')
+    list_display=('id', 'username', 'email', 'zipcode', 'zone', 'is_active', 'is_staff', 'is_superuser')
 
     fieldsets = (
-        ('User Info', {'fields': ('email', 'user_name', 'is_active', 'last_login')}),
+        ('User Info', {'fields': ('email', 'username', 'is_active', 'last_login')}),
         ('Permissions', {'fields': ('is_staff', 'is_superuser')}),
         ('User Provided Information', {'fields': ('zone', 'about')}),
     )
@@ -27,11 +27,11 @@ class UserAdminConfig(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'user_name', 'zipcode', 'is_staff', 'is_superuser', 'password1', 'password2',)
+            'fields': ('email', 'username', 'zipcode', 'is_staff', 'is_superuser', 'password1', 'password2',)
         }),
     )
 
 
 # Register your models here.
-admin.site.register(Gardener, UserAdminConfig)
+admin.site.register(Gardener)
 admin.site.register(Plant)

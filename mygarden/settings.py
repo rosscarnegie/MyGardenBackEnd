@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-9v=t_xor15_&ks9ry90=^534&fa2d_jmgq8+51luixgbo_y6-d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+CORS_ALLOWED_ORIGINS = [    
+'http://localhost:3000'
+]
 
 
 # Application definition
@@ -42,11 +44,15 @@ INSTALLED_APPS = [
 
 # My Installed Apps
     'api',
+
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders'
 ]
 
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -112,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
@@ -136,6 +142,8 @@ AUTH_USER_MODEL = 'api.Gardener'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
